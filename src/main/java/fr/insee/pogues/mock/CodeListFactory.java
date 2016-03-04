@@ -1,7 +1,6 @@
 package fr.insee.pogues.mock;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 
 import fr.insee.pogues.model.CodeList;
 import fr.insee.pogues.model.CodeListSpecification;
@@ -11,7 +10,7 @@ public class CodeListFactory {
 
 	public static int MAX_CODE_NUMBER = 7;
 
-	private static final Logger logger = LogManager.getLogger(CodeListFactory.class);
+	private static final Logger logger = Logger.getLogger(CodeListFactory.class);
 
 	public CodeListFactory() {}
 

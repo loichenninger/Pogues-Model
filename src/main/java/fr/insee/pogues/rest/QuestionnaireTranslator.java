@@ -10,8 +10,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 
 import fr.insee.pogues.conversion.JSONToXMLTranslator;
 import fr.insee.pogues.conversion.XMLToJSONTranslator;
@@ -19,7 +18,7 @@ import fr.insee.pogues.conversion.XMLToJSONTranslator;
 @Path("questionnaire")
 public class QuestionnaireTranslator {
 
-	private static final Logger logger = LogManager.getLogger(QuestionnaireTranslator.class);
+	private static final Logger logger = Logger.getLogger(QuestionnaireTranslator.class);
 
     @POST
     @Path("json-xml")

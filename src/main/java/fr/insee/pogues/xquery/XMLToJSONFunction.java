@@ -4,8 +4,7 @@ import java.io.UnsupportedEncodingException;
 
 import javax.xml.bind.JAXBException;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import org.exist.dom.QName;
 import org.exist.xquery.BasicFunction;
 import org.exist.xquery.Cardinality;
@@ -24,7 +23,7 @@ import fr.insee.pogues.conversion.XMLToJSONTranslator;
 
 public class XMLToJSONFunction extends BasicFunction {
 
-	private static final Logger logger = LogManager.getLogger(XMLToJSONFunction.class);
+	private static final Logger logger = Logger.getLogger(XMLToJSONFunction.class);
 
 	public final static FunctionSignature X2J_SIGNATURE = new FunctionSignature(
 		new QName("x2j", PoguesModule.NAMESPACE_URI, PoguesModule.PREFIX),

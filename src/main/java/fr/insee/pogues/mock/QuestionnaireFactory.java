@@ -1,7 +1,6 @@
 package fr.insee.pogues.mock;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 
 import fr.insee.pogues.model.ComponentGroup;
 import fr.insee.pogues.model.Questionnaire;
@@ -10,7 +9,7 @@ import fr.insee.pogues.model.Survey;
 
 public class QuestionnaireFactory {
 
-	private static final Logger logger = LogManager.getLogger(QuestionnaireFactory.class);
+	private static final Logger logger = Logger.getLogger(QuestionnaireFactory.class);
 
 	public QuestionnaireFactory() {}
 

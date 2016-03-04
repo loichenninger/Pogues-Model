@@ -1,7 +1,6 @@
 package fr.insee.pogues.xquery;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.exist.dom.QName;
 import org.exist.xquery.BasicFunction;
 import org.exist.xquery.Cardinality;
@@ -17,7 +16,7 @@ import org.exist.xquery.value.Type;
 
 public class EchoTestFunction extends BasicFunction {
 
-	private static final Logger logger = LogManager.getLogger(EchoTestFunction.class);
+	private static final Logger logger = Logger.getLogger(EchoTestFunction.class);
 
 	public final static FunctionSignature ECHO_SIGNATURE = new FunctionSignature(
 		new QName("echo", PoguesModule.NAMESPACE_URI, PoguesModule.PREFIX),

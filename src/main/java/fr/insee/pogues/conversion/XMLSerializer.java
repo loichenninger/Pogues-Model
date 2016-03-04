@@ -7,8 +7,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 
 import fr.insee.pogues.model.CodeList;
 import fr.insee.pogues.model.CodeLists;
@@ -19,7 +18,7 @@ public class XMLSerializer {
 
 	public XMLSerializer() { }
 
-	private static final Logger logger = LogManager.getLogger(XMLSerializer.class);
+	private static final Logger logger = Logger.getLogger(XMLSerializer.class);
 
 	public String serialize(Questionnaire questionnaire) throws JAXBException, UnsupportedEncodingException {
 

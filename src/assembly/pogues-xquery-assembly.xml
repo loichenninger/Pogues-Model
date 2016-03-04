@@ -26,11 +26,11 @@
     	<dependencySet>
     		<includes>
     			<include>org.eclipse.persistence:*</include>
-    			<include>org.apache.logging.log4j:*</include>
     			<include>commons-io:*</include>
     			<include>javax.validation:validation-api</include>
     			<include>org.glassfish:javax.json</include>
        		</includes>
+    		<unpack>true</unpack>
     	</dependencySet>
     </dependencySets>
     <includeBaseDirectory>false</includeBaseDirectory>
