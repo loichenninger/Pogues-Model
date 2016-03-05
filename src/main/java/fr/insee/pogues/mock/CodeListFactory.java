@@ -48,7 +48,7 @@ public class CodeListFactory {
 		logger.debug("Creating code list specification " + specId);
 
 		codeListSpecification.setId(specId);
-		codeListSpecification.setUri("http://id.insee.fr/codes/" + specId.toLowerCase());
+		codeListSpecification.setRetrievalQuery("http://id.insee.fr/codes/" + specId.toLowerCase());
 
 		return codeListSpecification;
 
