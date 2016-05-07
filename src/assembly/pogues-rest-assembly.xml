@@ -13,7 +13,7 @@
             <outputDirectory>WEB-INF</outputDirectory>
         </file>
         <file>
-            <source>src/main/resources/log4j2.xml</source>
+            <source>src/main/resources/log4j.xml</source>
             <outputDirectory>WEB-INF/classes</outputDirectory>
         </file>
     </files>
