@@ -46,7 +46,9 @@
         <xs:element name="Name" type="xs:token"/>
         <xs:element name="Label" type="xs:token" maxOccurs="unbounded"/>
         <xs:element name="Declaration" type="DeclarationType" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="Member" type="ComponentType" maxOccurs="unbounded"/>
+        <xs:element name="Member" type="ComponentType" minOccurs="0" maxOccurs="unbounded"/>
+        <!-- Could be a REFID -->
+        <xs:element name="MemberReference" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
       <xs:attribute name="id" type="xs:ID" use="required"/>
     </xs:complexType>
@@ -59,7 +61,7 @@
           <xs:element name="Response" type="ResponseType" maxOccurs="unbounded"/>
           <xs:element name="ResponseStructure" type="ResponseStructureType" minOccurs="0"/>
         </xs:sequence>
-        <xs:attribute name="type" type="QuestionTypeEnum"/>
+        <xs:attribute name="questionType" type="QuestionTypeEnum"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -83,7 +85,7 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="type" type="DimensionTypeEnum" use="required"/>
+    <xs:attribute name="dimensionType" type="DimensionTypeEnum" use="required"/>
     <xs:attribute name="dynamic" type="xs:token" use="required">
       <xs:annotation>
         <xs:documentation>'0': no constraint; 'm-': min m, no max; '-n': no min, n max; 'm-n': m min, n max</xs:documentation>
@@ -128,9 +130,19 @@
       <xs:element name="CodeListReference" type="xs:token" minOccurs="0"/>
       <xs:element name="Datatype" type="DatatypeType"/>
       <xs:element name="Value" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="NonResponseModality" type="NonResponseModalityType" minOccurs="0"/>
     </xs:sequence>
     <xs:attribute name="simple" type="xs:boolean"/>
     <xs:attribute name="mandatory" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="NonResponseModalityType">
+    <xs:sequence>
+      <xs:element name="Label" type="xs:token"/>
+      <xs:element name="Value" type="xs:anyType"/>
+      <xs:element name="Invite" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="firstIntentionDisplay" type="xs:boolean" use="required"/>
   </xs:complexType>
 
   <xs:complexType name="SequenceType">
@@ -149,7 +161,7 @@
     <xs:sequence>
       <xs:element name="Text" type="xs:string"/>
     </xs:sequence>
-    <xs:attribute name="type" type="DeclarationTypeEnum"/>
+    <xs:attribute name="declarationType" type="DeclarationTypeEnum"/>
     <xs:attribute name="position" type="DeclarationPositionEnum"/>
   </xs:complexType>
 
@@ -309,8 +321,8 @@
   <xs:simpleType name="QuestionTypeEnum">
     <xs:restriction base="xs:token">
       <xs:enumeration value="SIMPLE"/>
-      <xs:enumeration value="SINGLE"/>
-      <xs:enumeration value="MULTIPLE"/>
+      <xs:enumeration value="SINGLE_CHOICE"/>
+      <xs:enumeration value="MULTIPLE_CHOICE"/>
       <xs:enumeration value="TABLE"/>
     </xs:restriction>
   </xs:simpleType>
